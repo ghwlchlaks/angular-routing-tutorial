@@ -6,6 +6,7 @@ import { HeroesModule } from './heroes/heroes.module';
 
 import { AppRoutingModule } from "./app-routing.module";
 import {Router} from '@angular/router';
+import { CrisCenterModule } from './cris-center/cris-center.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {Router} from '@angular/router';
   imports: [
     BrowserModule,
     HeroesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CrisCenterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
