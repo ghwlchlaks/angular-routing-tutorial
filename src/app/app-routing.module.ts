@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 
-const routes : Routes = [
+const routes: Routes = [
   {
-    path: '', redirectTo:'/superheroes', pathMatch: 'full'
+    path: '', redirectTo: '/superheroes', pathMatch: 'full'
   },
   {
     path: 'cris',
     loadChildren: './cris-center/cris-center.module#CrisCenterModule'
   }
-]
+];
 
 @NgModule({
   declarations: [],

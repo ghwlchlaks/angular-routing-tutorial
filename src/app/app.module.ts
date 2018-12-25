@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeroesModule } from './heroes/heroes.module';
 
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule } from './app-routing.module';
 import {Router} from '@angular/router';
 import { CrisCenterModule } from './cris-center/cris-center.module';
 
@@ -21,8 +21,7 @@ import { CrisCenterModule } from './cris-center/cris-center.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  constructor(router: Router){
-    
+export class AppModule {
+  constructor(router: Router) {
   }
  }
