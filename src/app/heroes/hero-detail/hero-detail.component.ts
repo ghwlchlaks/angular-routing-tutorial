@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { Hero } from "../hero";
 import { HEROES } from "../heroes_data";
@@ -14,7 +14,7 @@ export class HeroDetailComponent implements OnInit {
   hero$ : Hero;
   heroes : Hero[];
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.heroes = HEROES;
    }
 
@@ -24,5 +24,10 @@ export class HeroDetailComponent implements OnInit {
     this.route.params.subscribe(params => 
         this.hero$ = this.heroes.find(hero => hero.id == +params.id)
     );
+  }
+
+  //뒤로가기 기능
+  back(){
+    this.router.navigate(['/superheroes'])
   }
 }
