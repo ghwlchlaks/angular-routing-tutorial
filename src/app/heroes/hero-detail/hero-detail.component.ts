@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+
 import { Hero } from "../hero";
-//import { HEROES } from "../heroes_data";
+import { HEROES } from "../heroes_data";
 
 @Component({
   selector: 'app-hero-detail',
@@ -10,11 +12,17 @@ import { Hero } from "../hero";
 export class HeroDetailComponent implements OnInit {
 
   hero$ : Hero;
+  heroes : Hero[];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.heroes = HEROES;
+   }
 
   ngOnInit() {
-    this.hero$ ={"id" : 13, "name" : "test"}; 
+    //this.hero$ ={"id" : 13, "name" : "test"}; 
+    //get parameter 
+    this.route.params.subscribe(params => 
+        this.hero$ = this.heroes.find(hero => hero.id == +params.id)
+    );
   }
-
 }
